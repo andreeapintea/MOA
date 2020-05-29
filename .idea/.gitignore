@@ -2,3 +2,5 @@
 *.iml
 target
 build
+# Default ignored files
+/workspace.xml
