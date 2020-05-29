@@ -1,5 +1,12 @@
 package org.example.services;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.FileUtils;
+import org.example.exceptions.CouldNotWriteUsersException;
+import org.example.exceptions.UsernameAlreadyExistException;
+import org.example.model.User;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -28,13 +35,13 @@ public class UserService {
         });
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
+    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistException {
         checkUserDoesNotAlreadyExist(username);
         users.add(new User(username, encodePassword(username, password), role));
         persistUsers();
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistException {
         Iterator var1 = users.iterator();
 
         User user;
@@ -46,7 +53,7 @@ public class UserService {
             user = (User)var1.next();
         } while(!Objects.equals(username, user.getUsername()));
 
-        throw new UsernameAlreadyExistsException(username);
+        throw new UsernameAlreadyExistException(username);
     }
 
     private static void persistUsers() {
