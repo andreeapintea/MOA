@@ -3,15 +3,18 @@ package org.example.model;
 public class User {
     private String username;
     private String password;
+    private String name;
     private String role;
 
     public User() {
     }
 
-    public User(String username, String password, String role) {
+    public User(String username, String password, String name, String role) {
         this.username = username;
         this.password = password;
+        this.name=name;
         this.role = role;
+
     }
 
     public String getUsername() {
@@ -36,6 +39,14 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean equals(Object o) {

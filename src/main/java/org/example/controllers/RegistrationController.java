@@ -34,6 +34,8 @@ public class RegistrationController {
     private Button BacktoLoginButton;
     @FXML
     private AnchorPane rootPane2;
+    @FXML
+    private TextField nameField;
 
     public RegistrationController() {
     }
@@ -48,7 +50,7 @@ public class RegistrationController {
     @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(this.usernameField.getText(), this.passwordField.getText(), (String)this.role.getValue());
+            UserService.addUser(this.usernameField.getText(), this.passwordField.getText(), this.nameField.getText(), (String)this.role.getValue());
             this.registrationMessage.setText("Account created successfully!");
         } catch (UsernameAlreadyExistException var2) {
             this.registrationMessage.setText(var2.getMessage());

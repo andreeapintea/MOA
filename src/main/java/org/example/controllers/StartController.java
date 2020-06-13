@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class StartController {
     @FXML
-    private Button  LogIn;
+    private Button LogIn;
 
     @FXML
     private Button CreateAccount;
@@ -30,7 +30,9 @@ public class StartController {
 
     }
 
-    public void  handelLogIn() {
-
+    public void  handleLogin() throws IOException {
+        Parent root = (Parent) FXMLLoader.load(this.getClass().getClassLoader().getResource("login.fxml"));
+        Scene scene = LogIn.getScene();
+        rootPane.getChildren().add(root);
     }
 }
