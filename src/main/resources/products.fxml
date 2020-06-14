@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ProductsController">
+    <children>
+        <ImageView fitHeight="585.0" fitWidth="543.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@25329568.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="userLabel" layoutX="31.0" layoutY="21.0" prefHeight="17.0" prefWidth="218.0" textFill="#9a2929">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Text fx:id="registrationMessage" layoutX="125.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="291.13671875" />
+        <Button fx:id="backToMainButton" layoutX="31.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleBackToMain" prefHeight="25.0" prefWidth="125.0" text="Back to main page" />
+      <VBox layoutX="24.0" layoutY="60.0" prefHeight="200.0" prefWidth="242.0">
+         <children>
+            <ListView fx:id="productsList" onMouseClicked="#listViewSelectedProduct" prefHeight="200.0" prefWidth="228.0" />
+         </children>
+      </VBox>
+      <Button fx:id="addProductButton" layoutX="47.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleAddProductAction" prefHeight="38.0" prefWidth="125.0" text="Add Product" />
+      <Button fx:id="editProductButton" layoutX="199.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleEditProductAction" prefHeight="38.0" prefWidth="125.0" text="Edit Product" />
+      <Button fx:id="deleteProductButton" layoutX="349.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleDeleteProductAction" prefHeight="38.0" prefWidth="125.0" text="Delete Product" />
+      <ImageView fx:id="selectedProductImg" fitHeight="150.0" fitWidth="200.0" layoutX="296.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</AnchorPane>
