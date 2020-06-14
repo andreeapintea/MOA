@@ -5,19 +5,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.BrandmainController">
+<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.BrandmainController">
     <children>
-        <ImageView fitHeight="585.0" fitWidth="543.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="585.0" fitWidth="543.0" layoutX="-107.0" layoutY="-101.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@25329568.jpg" />
             </image>
         </ImageView>
-      <Button layoutX="112.0" layoutY="89.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="317.0" text="Add Products" />
-      <Button layoutX="112.0" layoutY="150.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="317.0" text="Edit Products" />
-      <Button layoutX="112.0" layoutY="215.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="317.0" text="Remove Products" />
-      <Button layoutX="112.0" layoutY="345.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="317.0" text="Settings" />
-      <Button layoutX="112.0" layoutY="278.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="317.0" text="View Orders" />
-        <Label fx:id="usernameLabel" layoutX="25.0" layoutY="22.0" prefHeight="17.0" prefWidth="96.0" textAlignment="CENTER" textFill="#9a2929">
+      <Button fx:id="viewProductsButton" layoutX="73.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleViewProductsAction" prefHeight="55.0" prefWidth="154.0" text="View Products" />
+      <Button fx:id="logoutButton" layoutX="67.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleLogOutAction" prefHeight="55.0" prefWidth="163.0" text="Log out" />
+      <Button fx:id="viewOrdersButton" layoutX="72.0" layoutY="135.0" mnemonicParsing="false" onAction="#handleViewOrdersAction" prefHeight="55.0" prefWidth="154.0" text="View Orders" />
+        <Label fx:id="usernameLabel" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="96.0" textAlignment="CENTER" textFill="#9a2929">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font></Label>
