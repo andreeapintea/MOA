@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ClientmainController">
+    <children>
+        <ImageView fitHeight="585.0" fitWidth="543.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@25329568.jpg" />
+            </image>
+        </ImageView>
+        <Text fx:id="userBox" fill="#9a2929" layoutX="25.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="141.13673400878906">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Text>
+    </children>
+</AnchorPane>

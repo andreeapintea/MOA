@@ -1,10 +1,13 @@
 package org.example.services;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.example.exceptions.CouldNotWriteUsersException;
+import org.example.exceptions.UserDoesNotExist;
 import org.example.exceptions.UsernameAlreadyExistException;
+import org.example.exceptions.WrongPassword;
 import org.example.model.User;
 
 import java.io.IOException;
@@ -31,13 +34,14 @@ public class UserService {
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         users = (List)objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
         });
     }
 
-    public static void addUser(String username, String password, String role) throws UsernameAlreadyExistException {
+    public static void addUser(String username, String password, String name, String role) throws UsernameAlreadyExistException {
         checkUserDoesNotAlreadyExist(username);
-        users.add(new User(username, encodePassword(username, password), role));
+        users.add(new User(username, encodePassword(username, password), name,  role));
         persistUsers();
     }
 
@@ -79,5 +83,51 @@ public class UserService {
         } catch (NoSuchAlgorithmException var2) {
             throw new IllegalStateException("SHA-512 does not exist!");
         }
+    }
+    public static User getUser(String username) throws Exception
+    {
+        UserService.loadUsersFromFile();
+        Iterator var1 = users.iterator();
+
+        User user;
+        do {
+            if (!var1.hasNext()) {
+                throw new UserDoesNotExist(username);
+            }
+
+            user = (User)var1.next();
+        } while(!Objects.equals(username, user.getUsername()));
+        return user;
+    }
+    public static User checkLogin (String username, String password) throws Exception
+    {
+        /*UserService.loadUsersFromFile();
+        Iterator var1 = users.iterator();
+
+        User user;
+        do {
+            if (!var1.hasNext()) {
+                throw new UserDoesNotExist(username);
+            }
+
+            user = (User)var1.next();
+        } while(!Objects.equals(username, user.getUsername()));*/
+        User u = UserService.getUser(username);
+        if (Objects.equals(u.getPassword(), encodePassword(username,password)))
+        {
+            return u;
+        }
+        else
+            throw new WrongPassword();
+    }
+
+    public static int checkRole(User u) throws Exception
+    {
+        if (u.getRole().equals("Client"))
+            return 1;
+        else if (u.getRole().equals("MakeUpBrand"))
+            return 2;
+        else
+            throw new UserDoesNotExist(u.getUsername());
     }
 }
