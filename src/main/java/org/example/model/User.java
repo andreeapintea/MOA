@@ -72,6 +72,6 @@ public class User {
     }
 
     public String toString() {
-        return "UserDTO{username='" + this.username + '\'' + ", password='" + this.password + '\'' + ", role='" + this.role + '\'' + '}';
+        return  this.name;
     }
 }

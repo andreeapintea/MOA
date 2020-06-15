@@ -100,6 +100,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return productName + ", " + quantity + " " + measurement +", "+price;
+        return productName + ", " + quantity + "buc, "  + this.price + "lei";
     }
 }

@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ClientmainController">
+<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ClientmainController">
     <children>
         <ImageView fitHeight="585.0" fitWidth="543.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@25329568.jpg" />
             </image>
         </ImageView>
-        <Text fx:id="userBox" fill="#9a2929" layoutX="25.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="141.13673400878906">
+        <Text fx:id="userBox" fill="#9a2929" layoutX="149.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="260.13673400878906">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font></Text>
+      <Button fx:id="viewBrands" layoutX="216.0" layoutY="159.0" mnemonicParsing="false" onAction="#handleViewBrandsAction" prefHeight="56.0" prefWidth="127.0" text="View Brands" />
+      <Button fx:id="viewOrders" layoutX="216.0" layoutY="276.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="127.0" text="View Orders" />
+      <Button fx:id="logOut" layoutX="112.0" layoutY="374.0" mnemonicParsing="false" onAction="#handlelogOutButton" prefHeight="25.0" prefWidth="96.0" text="Log Out" />
     </children>
 </AnchorPane>
