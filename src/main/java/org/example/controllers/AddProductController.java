@@ -105,7 +105,7 @@ public class AddProductController implements Initializable {
         if (fieldsReadyToSubmit()) {
             try {
                 int quant = Integer.parseInt(quantityField.getText());
-                double price = Double.parseDouble(quantityField.getText());
+                double price = Double.parseDouble(priceField.getText());
                 String imageUrl = getPath();
                 ProductsService.addProduct(this.productNameField.getText(), imageUrl, quant, price, (String) this.unit.getValue());
                 this.addProductMessage.setText("Product has been successfully added!");

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.BrandProductsController">
+   <children>
+      <ImageView fitHeight="643.0" fitWidth="538.0" layoutX="-13.0" layoutY="-29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bm531217.jpg" />
+         </image>
+      </ImageView>
+      <ListView fx:id="ProductsList" layoutY="139.0" onMouseClicked="#listViewSelectedProduct" prefHeight="237.0" prefWidth="352.0" />
+      <Text fx:id="userBox" fill="#9a2929" layoutX="26.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="176.13671875">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#9a2929" layoutX="93.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose your favourite product and order it!" textAlignment="CENTER" wrappingWidth="338.13671875">
+         <font>
+            <Font name="Leelawadee Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="Order" layoutX="406.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleOrderAction" prefHeight="25.0" prefWidth="89.0" text="Order" />
+      <Button fx:id="BackToBrands" layoutX="67.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleBackBrandsButton" text="Back to Brands" />
+      <ImageView fx:id="SelectedProductImage" fitHeight="145.0" fitWidth="162.0" layoutX="363.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="orderMessage" layoutX="242.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="269.0" />
+   </children>
+</AnchorPane>
