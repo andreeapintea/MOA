@@ -54,8 +54,8 @@ public class OrdersService {
                 throw new CouldNotWriteOrdersException();
             }
         }
-        public static List<Order> getOrders(String Username)throws Exception {
-            org.example.services.OrdersService.loadOrdersFromFile();
+        public static List<Order> getClientOrders(String Username)throws Exception {
+            OrdersService.loadOrdersFromFile();
             List<Order> order = new ArrayList<>();
             for (Order or : orders) {
                 if (Objects.equals(Username, or.getClientUsername())) {
@@ -64,4 +64,17 @@ public class OrdersService {
             }
             return order;
         }
+
+    public static List<Order> getBrandOrders(String Username)throws Exception {
+        OrdersService.loadOrdersFromFile();
+        List<Order> order = new ArrayList<>();
+        for (Order or : orders) {
+            if (Objects.equals(Username, or.getProduct().getBrandUsername())) {
+                order.add(or);
+            }
+        }
+        return order;
+    }
+
+
 }
