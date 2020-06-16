@@ -76,8 +76,18 @@ public class BrandmainController implements Initializable {
         stage1.show();
     }
 
-    public void handleViewOrdersAction(){
-
+    public void handleViewOrdersAction() throws Exception{
+        User us=BrandmainController.getBrand();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getClassLoader().getResource("ordersBrand.fxml"));
+        Parent root1 = loader.load();
+        Scene scene1 = new Scene(root1);
+        OrdersBrandController control = loader.getController();
+        //MakeUpBrand br = new MakeUpBrand(us);
+        control.initData(us);
+        Stage stage1 = (Stage) viewProductsButton.getScene().getWindow();
+        stage1.setScene(scene1);
+        stage1.show();
     }
 
     @Override

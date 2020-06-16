@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.services.UserService;
+
 import java.util.Objects;
 import java.util.Random;
 
@@ -64,6 +66,11 @@ public class Order {
 
     @Override
     public String toString() {
-        return "nume cumparator: " + clientUsername + "\n" + "produs: " +  product + "\n" +"numar comanda: "  + orderNo;
+        try {
+            return "Order no: " + this.orderNo + ", Product: " + this.product.getProductName() + ", Price: " + this.product.getPrice() + ", Brand: " + this.product.getBrandName() + ", Client: " + UserService.getUser(this.clientUsername).getName() + ", Status: " + this.status;
+        }catch (Exception e){
+            System.err.println(e.getMessage());
+        }
+        return null;
     }
 }
