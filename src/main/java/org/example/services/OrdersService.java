@@ -78,6 +78,17 @@ public class OrdersService {
         return order;
     }
 
+    public static List<Order> getCustomerOrders(String Username)throws Exception {
+        OrdersService.loadOrdersFromFile();
+        List<Order> order = new ArrayList<>();
+        for (Order or : orders) {
+            if (Objects.equals(Username, or.getClientUsername())) {
+                order.add(or);
+            }
+        }
+        return order;
+    }
+
     public static void changeOrderStatus(Order or, String stat) throws Exception {
         for (Order o:orders){
             if(o.equals(or)){
