@@ -57,6 +57,8 @@ public class AddProductController implements Initializable {
     @FXML
     public TextField priceField;
     @FXML
+    public TextField numProd;
+    @FXML
     public ImageView productImage;
     @FXML
     public Button selectImageButton;
@@ -90,7 +92,7 @@ public class AddProductController implements Initializable {
         fileChooser.getExtensionFilters().add(imageFilter);
         File imageFile = fileChooser.showOpenDialog(stage);
         if (imageFile.isFile()){
-            System.out.println(imageFile.getPath());
+            //System.out.println(imageFile.getPath());
             setPath(imageFile.toURI().toString());
             productImage.setImage(new Image(imageFile.toURI().toString()));
         }
@@ -106,8 +108,9 @@ public class AddProductController implements Initializable {
             try {
                 int quant = Integer.parseInt(quantityField.getText());
                 double price = Double.parseDouble(priceField.getText());
+                int number = Integer.parseInt(numProd.getText());
                 String imageUrl = getPath();
-                ProductsService.addProduct(this.productNameField.getText(), imageUrl, quant, price, (String) this.unit.getValue());
+                ProductsService.addProduct(this.productNameField.getText(), imageUrl, quant, price, (String) this.unit.getValue(),number);
                 this.addProductMessage.setText("Product has been successfully added!");
             } catch (ProductAlreadyExists var2) {
                 this.addProductMessage.setText(var2.getMessage());

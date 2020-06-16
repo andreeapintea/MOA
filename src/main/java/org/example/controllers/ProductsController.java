@@ -69,8 +69,10 @@ public class ProductsController implements Initializable {
     }
 
     public void listViewSelectedProduct(){
-        selectedProd = productsList.getSelectionModel().getSelectedItem();
-        updateGUI();
+        if (productsList.getSelectionModel().getSelectedItem()!=null) {
+            selectedProd = productsList.getSelectionModel().getSelectedItem();
+            updateGUI();
+        }
     }
     private void updateGUI()
     {

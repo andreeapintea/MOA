@@ -11,11 +11,12 @@ public class Product {
     private int quantity;
     private double price;
     private String measurement;
+    private int noOfItems;
 
     public Product(){
 
     }
-    public Product(String brandName, String productName, String brandUsername, String imageUrl, int quantity, double price, String measurement) {
+    public Product(String brandName, String productName, String brandUsername, String imageUrl, int quantity, double price, String measurement, int noOfItems) {
         this.brandName = brandName;
         this.productName = productName;
         this.brandUsername = brandUsername;
@@ -23,6 +24,15 @@ public class Product {
         this.quantity = quantity;
         this.price = price;
         this.measurement=measurement;
+        this.noOfItems=noOfItems;
+    }
+
+    public int getNoOfItems() {
+        return noOfItems;
+    }
+
+    public void setNoOfItems(int noOfItems) {
+        this.noOfItems = noOfItems;
     }
 
     public String getBrandName() {
@@ -100,6 +110,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return productName + ", " + quantity + "buc, "  + this.price + "lei";
+        return productName + ", " + quantity + measurement + ", Bucati in stoc: " + noOfItems + ", "  + this.price + "lei";
     }
 }

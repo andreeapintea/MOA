@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.example.exceptions.ProductNotInStock;
 import org.example.exceptions.UsernameAlreadyExistException;
 import org.example.model.Product;
 import org.example.model.User;
@@ -73,6 +74,7 @@ public class BrandProductsController {
     private static List<Product> brandProducts = new ArrayList<>();
 
     private void updateBrandProductsList() throws Exception {
+        ProductsList.getItems().clear();
         brandProducts.removeAll(brandProducts);
         List<Product> p = new ArrayList<>();
         p = ProductsService.getProducts(selectedBrand.getUsername());
@@ -97,10 +99,22 @@ public class BrandProductsController {
         this.orderMessage.setText("");
     }
 
-    public void handleOrderAction() throws IOException {
+    public void handleOrderAction() throws Exception {
             OrdersService.loadOrdersFromFile();
-            OrdersService.addOrder(this.getClient().getUsername(), this.getSelectedProd());
-            this.orderMessage.setText("You successfully ordered the product");
+            if (ProductsList.getSelectionModel().getSelectedItem()!=null)
+            {
+                try {
+                    ProductsService.updateNumberOfItems(this.getSelectedProd());
+                    OrdersService.addOrder(this.getClient().getUsername(), this.getSelectedProd());
+                    this.orderMessage.setText("You successfully ordered the product");
+                } catch (ProductNotInStock var2){
+                    this.orderMessage.setText(var2.getMessage());
+                }
+
+
+            }
+            updateBrandProductsList();
+
 
 
     }

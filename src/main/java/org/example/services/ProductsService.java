@@ -37,11 +37,11 @@ public class ProductsService {
         });
     }
 
-    public static void addProduct(String productname, String imgurl, int quantity, double price, String measurement) throws ProductAlreadyExists {
+    public static void addProduct(String productname, String imgurl, int quantity, double price, String measurement, int numItems) throws ProductAlreadyExists {
         String branduser= BrandmainController.getBrand().getUsername();
         String brandname = BrandmainController.getBrand().getName();
         checkProductDoesNotAlreadyExist(productname,branduser);
-        products.add(new Product(brandname, productname, branduser, imgurl, quantity, price, measurement));
+        products.add(new Product(brandname, productname, branduser, imgurl, quantity, price, measurement,numItems));
         persistProducts();
     }
 
@@ -81,6 +81,20 @@ public class ProductsService {
         }
         return prod;
 
+    }
+
+    public static void updateNumberOfItems (Product pr) throws ProductNotInStock{
+
+        for (Product p:products){
+            if(p.equals(pr)){
+                if (p.getNoOfItems()!=0){
+                    p.setNoOfItems(p.getNoOfItems()-1);
+                    ProductsService.persistProducts();
+                }
+                else throw new ProductNotInStock();
+            }
+        }
+        
     }
 
 }

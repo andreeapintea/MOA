@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.BrandmainController">
+<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.BrandmainController">
     <children>
         <ImageView fitHeight="585.0" fitWidth="543.0" layoutX="-8.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -17,7 +15,7 @@
       <Button fx:id="viewProductsButton" layoutX="187.0" layoutY="169.0" mnemonicParsing="false" onAction="#handleViewProductsAction" prefHeight="55.0" prefWidth="154.0" text="View Products" />
       <Button fx:id="logoutButton" layoutX="35.0" layoutY="406.0" mnemonicParsing="false" onAction="#handleLogOutAction" prefHeight="28.0" prefWidth="129.0" text="Log out" />
       <Button fx:id="viewOrdersButton" layoutX="186.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleViewOrdersAction" prefHeight="55.0" prefWidth="154.0" text="View Orders" />
-        <Label fx:id="usernameLabel" layoutX="163.0" layoutY="69.0" prefHeight="17.0" prefWidth="201.0" textAlignment="CENTER" textFill="#9a2929">
+        <Label fx:id="usernameLabel" layoutX="21.0" layoutY="22.0" prefHeight="17.0" prefWidth="201.0" textAlignment="CENTER" textFill="#9a2929">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font></Label>
