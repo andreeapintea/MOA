@@ -41,7 +41,7 @@ public class OrdersService {
             int orderNo = rand.nextInt(1000);
             //int orderNo = (int )(Math.random() * 100 + 1);
 
-            orders.add( new Order(clientUsername, product, orderNo));
+            orders.add( new Order(clientUsername, product, orderNo, "pending"));
             persistOrders();
         }
 

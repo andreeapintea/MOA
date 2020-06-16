@@ -45,7 +45,7 @@ public class BrandsController implements Initializable {
 
    public void initData(User c) throws Exception {
         this.client = c;
-        this.userBox.setText(client.getUsername());
+        this.userBox.setText("Hello, " + client.getUsername() + "!");
          updateBrandsList();
     }
 

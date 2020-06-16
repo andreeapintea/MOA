@@ -13,15 +13,23 @@ public class Order {
     public Order(){
 
     }
-    public Order(String clientUsername, Product product, int orderNo) {
+    public Order(String clientUsername, Product product, int orderNo, String status) {
         this.clientUsername = clientUsername;
         this.product = product;
         this.orderNo = orderNo;
-        this.status = "pending";
+        this.status = status;
         //System.out.println(this.clientUsername);
        // System.out.println(this.orderNo);
         //System.out.println(this.product);
 
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getClientUsername() {
