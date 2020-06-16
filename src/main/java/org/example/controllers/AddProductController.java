@@ -1,5 +1,7 @@
 package org.example.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -158,6 +160,32 @@ public class AddProductController implements Initializable {
         }
         productImage.setImage(new Image("def_pic.jpg"));
         setPath("def_pic.jpg");
+        priceField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if(!newValue.matches("\\d*(\\.\\d*)?")){
+                    priceField.setText(oldValue);
+                }
+            }
+        });
+
+        quantityField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if(!newValue.matches("\\d*?")){
+                    quantityField.setText(oldValue);
+                }
+            }
+        });
+
+        numProd.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if(!newValue.matches("\\d*?")){
+                    numProd.setText(oldValue);
+                }
+            }
+        });
     }
 
     public String getPath() {
