@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="331.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.UpdatestatusController">
+    <children>
+        <ImageView fitHeight="585.0" fitWidth="543.0" layoutX="-102.0" layoutY="-168.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@25329568.jpg" />
+            </image>
+        </ImageView>
+        <Button fx:id="backButton" layoutX="36.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="29.0" prefWidth="101.0" text="Back" />
+        <Button fx:id="updateButton" layoutX="202.0" layoutY="197.0" mnemonicParsing="false" onAction="#handleUpdateAction" prefHeight="29.0" prefWidth="101.0" text="Update" />
+        <Label fx:id="usernameLabel" layoutX="85.0" layoutY="57.0" prefHeight="17.0" prefWidth="162.0" text="Select the new order status:" textAlignment="CENTER" textFill="#9a2929">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+      <Label fx:id="statusLabel" layoutX="65.0" layoutY="168.0" prefHeight="17.0" prefWidth="201.0" textAlignment="CENTER" textFill="#9a2929">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="statuses" layoutX="94.0" layoutY="124.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>

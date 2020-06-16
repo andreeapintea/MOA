@@ -5,8 +5,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
 import org.example.controllers.ClientmainController;
+import org.example.exceptions.CannotFindOrder;
 import org.example.exceptions.CouldNotWriteOrdersException;
 import org.example.exceptions.ProductAlreadyExists;
+import org.example.exceptions.ProductNotInStock;
 import org.example.model.Order;
 import org.example.model.Product;
 
@@ -74,6 +76,18 @@ public class OrdersService {
             }
         }
         return order;
+    }
+
+    public static void changeOrderStatus(Order or, String stat) throws Exception {
+        for (Order o:orders){
+            if(o.equals(or)){
+                o.setStatus(stat);
+                OrdersService.persistOrders();
+                return;
+
+                }
+        }
+        throw new CannotFindOrder();
     }
 
 

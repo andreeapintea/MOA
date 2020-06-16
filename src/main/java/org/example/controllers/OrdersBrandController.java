@@ -40,6 +40,10 @@ public class OrdersBrandController implements Initializable {
     private Order selectedOrder;
     private static List<Order> orders = new ArrayList<>();
 
+    public OrdersBrandController(){
+
+    }
+
     public static User getBrand() {
         return brand;
     }
@@ -60,6 +64,22 @@ public class OrdersBrandController implements Initializable {
         Stage stage1 = (Stage) backToMainButton.getScene().getWindow();
         stage1.setScene(scene1);
         stage1.show();
+    }
+
+    public void handleUpdateStatus() throws IOException{
+       if (ordersList.getSelectionModel().getSelectedItem()!=null) {
+           User us = getBrand();
+           Order or = ordersList.getSelectionModel().getSelectedItem();
+           FXMLLoader loader = new FXMLLoader();
+           loader.setLocation(this.getClass().getClassLoader().getResource("updatestatus.fxml"));
+           Parent root1 = loader.load();
+           Scene scene1 = new Scene(root1);
+           UpdatestatusController control = loader.getController();
+           control.initData(us, or);
+           Stage stage1 = (Stage) updateStatus.getScene().getWindow();
+           stage1.setScene(scene1);
+           stage1.show();
+       }
     }
     private void updateOrderList() throws Exception {
         ordersList.getItems().clear();
