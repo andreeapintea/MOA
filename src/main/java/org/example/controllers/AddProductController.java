@@ -68,6 +68,9 @@ public class AddProductController implements Initializable {
     @FXML
     public Text addProductMessage;
 
+    @FXML
+    public Button resetImageButton;
+
     private static User brand;
     private String path;
 
@@ -82,6 +85,10 @@ public class AddProductController implements Initializable {
         this.brand = br;
     }
 
+    public void handleResetAction(){
+        productImage.setImage(new Image("def_pic.jpg"));
+        setPath("def_pic.jpg");
+    }
 
     public void handleSelectImage(){
 
