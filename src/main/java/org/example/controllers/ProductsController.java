@@ -48,7 +48,10 @@ public class ProductsController implements Initializable {
     public ImageView selectedProductImg;
 
     private static User brand;
-    private Product selectedProd;
+
+
+
+    private static Product selectedProd;
     private static List<Product> products = new ArrayList<>();
 
     private void updateProductList() throws Exception {
@@ -86,6 +89,7 @@ public class ProductsController implements Initializable {
         this.brand = br;
         this.userLabel.setText("Hello, " + brand.getUsername() + "!");
         updateProductList();
+
     }
 
     public void handleBackToMain() throws IOException {
@@ -115,10 +119,25 @@ public class ProductsController implements Initializable {
         stage1.show();
     }
 
-    public void handleEditProductAction(){
+    public void handleEditProductAction() throws Exception {
+        User us=ProductsController.getBrand();
+        Product p = ProductsController.getSelectedProd();
+        System.out.println(p);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getClassLoader().getResource("editproduct.fxml"));
+        Parent root1 = loader.load();
+        Scene scene1 = new Scene(root1);
+        EditProductController control = loader.getController();
+        control.initData(us,p);
+        Stage stage1 = (Stage) editProductButton.getScene().getWindow();
+        stage1.setScene(scene1);
+        stage1.show();
 
     }
 
+    public static Product getSelectedProd() {
+        return selectedProd;
+    }
     public void handleDeleteProductAction(){
 
     }
@@ -138,5 +157,7 @@ public class ProductsController implements Initializable {
         }catch (IOException e){
             System.err.println(e.getMessage());
         }
+
+        //System.out.println(selectedProd);
     }
 }

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.EditProductController">
+    <children>
+        <ImageView fx:id="productImage" fitHeight="585.0" fitWidth="543.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@bm531217.jpg" />
+            </image>
+        </ImageView>
+        <Label fx:id="userLabel" layoutX="31.0" layoutY="21.0" prefHeight="17.0" prefWidth="218.0" textFill="#9a2929">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Text fx:id="registrationMessage" layoutX="125.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="291.13671875" />
+        <Button fx:id="cancelButton" layoutX="78.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleCancelAction" prefHeight="25.0" prefWidth="125.0" text="Cancel" />
+        <Button fx:id="saveChanges" layoutX="309.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleSaveChangesAction" prefHeight="25.0" prefWidth="125.0" text="Save Changes" />
+        <TextField fx:id="productNameField" layoutX="275.0" layoutY="214.0" prefHeight="25.0" prefWidth="170.0" promptText="product name" />
+        <Label layoutX="133.0" layoutY="218.0" prefHeight="17.0" prefWidth="93.0" text="Product name:" textFill="#9a2929">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Label layoutX="133.0" layoutY="261.0" prefHeight="17.0" prefWidth="125.0" text="Quantity in product:" textFill="#9a2929">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="quantityField" layoutX="275.0" layoutY="257.0" prefHeight="25.0" prefWidth="80.0" promptText="quantity" />
+        <ChoiceBox fx:id="unit" layoutX="372.0" layoutY="257.0" prefHeight="25.0" prefWidth="71.0" />
+        <Label layoutX="133.0" layoutY="342.0" prefHeight="17.0" prefWidth="80.0" text="Price:" textFill="#9a2929">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="priceField" layoutX="275.0" layoutY="338.0" prefHeight="25.0" prefWidth="170.0" promptText="price" />
+        <ImageView fx:id="productImage" fitHeight="150.0" fitWidth="200.0" layoutX="103.0" layoutY="38.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="changeImgButton" layoutX="336.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleChangeImgButton" text="Change Image" />
+        <Text fx:id="editMessage" layoutX="129.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="291.13671875" />
+        <Label layoutX="133.0" layoutY="302.0" prefHeight="17.0" prefWidth="108.0" text="Number of items:" textFill="#9a2929">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="numProd" layoutX="275.0" layoutY="298.0" prefHeight="25.0" prefWidth="170.0" promptText="number of items in stock" />
+    </children>
+</AnchorPane>
