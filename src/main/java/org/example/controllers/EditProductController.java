@@ -79,8 +79,7 @@ public class EditProductController implements Initializable {
         this.priceField.setText(product.getStringPrice());
         this.productNameField.setText(product.getProductName());
         productImage.setImage(new Image(product.getImageUrl()));
-       // setPath("def_pic.jpg");
-        //this.unit.setValue("ml");
+        setPath("def_pic.jpg");
         this.unit.setItems(unitList);
     }
 
@@ -154,7 +153,6 @@ public class EditProductController implements Initializable {
             System.err.println(e.getMessage());
         }
     }
-
 
 
 }
