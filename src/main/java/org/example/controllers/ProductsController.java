@@ -55,6 +55,7 @@ public class ProductsController implements Initializable {
     private static List<Product> products = new ArrayList<>();
 
     private void updateProductList() throws Exception {
+        productsList.getItems().clear();
         products.removeAll(products);
         List<Product> p = new ArrayList<>();
         p = ProductsService.getProducts(brand.getUsername());
@@ -138,7 +139,20 @@ public class ProductsController implements Initializable {
     public static Product getSelectedProd() {
         return selectedProd;
     }
-    public void handleDeleteProductAction(){
+
+    public void handleDeleteProductAction() throws Exception {
+        User us=ProductsController.getBrand();
+        Product p = ProductsController.getSelectedProd();
+        System.out.println(p);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(this.getClass().getClassLoader().getResource("deleteProduct.fxml"));
+        Parent root1 = loader.load();
+        Scene scene1 = new Scene(root1);
+        DeleteProductController control = loader.getController();
+        control.initData(us,p);
+        Stage stage1 = (Stage) deleteProductButton.getScene().getWindow();
+        stage1.setScene(scene1);
+        stage1.show();
 
     }
 
