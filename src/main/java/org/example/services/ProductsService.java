@@ -118,13 +118,17 @@ public class ProductsService {
 
     public static void deleteProduct (Product p)
     {
-        int ok=0;
-        for(Product pr : products) {
-            if (pr.equals(p)) {
-                products.remove(pr);
-                ProductsService.persistProducts();
 
+        Iterator<Product> iter = products.iterator();
+
+        while (iter.hasNext()) {
+            Product pr = iter.next();
+
+            if (pr.equals(p)) {
+                iter.remove();
+                ProductsService.persistProducts();
             }
+
         }
 
 
