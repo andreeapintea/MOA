@@ -89,12 +89,10 @@ public class EditProductController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image");
 
-        //filter for .jpg
         FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.jpg");
         fileChooser.getExtensionFilters().add(imageFilter);
         File imageFile = fileChooser.showOpenDialog(stage);
         if (imageFile.isFile()){
-            //System.out.println(imageFile.getPath());
             setPath(imageFile.toURI().toString());
             productImage.setImage(new Image(imageFile.toURI().toString()));
         }
@@ -114,7 +112,6 @@ public class EditProductController implements Initializable {
         Parent root1 = loader.load();
         Scene scene1 = new Scene(root1);
         ProductsController control = loader.getController();
-        //MakeUpBrand br = new MakeUpBrand(us);
         control.initData(us);
         Stage stage1 = (Stage) cancelButton.getScene().getWindow();
         stage1.setScene(scene1);
@@ -128,7 +125,6 @@ public class EditProductController implements Initializable {
                 double price = Double.parseDouble(priceField.getText());
                 int number = Integer.parseInt(numProd.getText());
                 String imageUrl = getPath();
-                System.out.println(imageUrl);
                 String name = productNameField.getText();
                 String measure = (String)unit.getValue();
                 ProductsService.editProduct(product,name,imageUrl,quant,number,price,measure);

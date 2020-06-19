@@ -47,7 +47,6 @@ public class DeleteProductController {
 
     public void handleYesButton() throws Exception {
         ProductsService.deleteProduct(product);
-       // updateProductList();
 
     }
 
@@ -58,7 +57,6 @@ public class DeleteProductController {
         Parent root1 = loader.load();
         Scene scene1 = new Scene(root1);
         ProductsController control = loader.getController();
-        //MakeUpBrand br = new MakeUpBrand(us);
         control.initData(us);
         Stage stage1 = (Stage) noButton.getScene().getWindow();
         stage1.setScene(scene1);
@@ -72,7 +70,6 @@ public class DeleteProductController {
         Parent root1 = loader.load();
         Scene scene1 = new Scene(root1);
         ProductsController control = loader.getController();
-        //MakeUpBrand br = new MakeUpBrand(us);
         control.initData(us);
         Stage stage1 = (Stage) back.getScene().getWindow();
         stage1.setScene(scene1);

@@ -101,11 +101,8 @@ public class ProductsService {
         for (Product p: products) {
             if (p.equals(pr))
             {
-
                 p.setProductName(name);
                 p.setImageUrl(ImgURL);
-
-                System.out.println(p.getImageUrl());
                 p.setQuantity(quant);
                 p.setNoOfItems(nr);
                 p.setPrice(price);

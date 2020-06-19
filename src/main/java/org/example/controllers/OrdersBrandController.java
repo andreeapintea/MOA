@@ -59,7 +59,6 @@ public class OrdersBrandController implements Initializable {
         Parent root1 = loader.load();
         Scene scene1 = new Scene(root1);
         BrandmainController control = loader.getController();
-        //MakeUpBrand br = new MakeUpBrand(us);
         control.initData(us);
         Stage stage1 = (Stage) backToMainButton.getScene().getWindow();
         stage1.setScene(scene1);

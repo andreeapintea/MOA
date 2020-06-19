@@ -58,25 +58,18 @@ public class LoginController {
                 Parent root1 = loader.load();
                 Scene scene1 = new Scene(root1);
                 ClientmainController control = loader.getController();
-                //Client cl = new Client(us);
                 control.initData(us);
                 Stage stage1 = (Stage) login.getScene().getWindow();
                 stage1.setScene(scene1);
                 stage1.show();
-                //this.loginMessage.setText("Logged in as client");
+
             }
             if (UserService.checkRole(us)==2){
-                /*// = (Parent) FXMLLoader.load(this.getClass().getClassLoader().getResource("brandmain.fxml"));
-                AnchorPane pane = FXMLLoader.load(this.getClass().getClassLoader().getResource("brandmain.fxml"));
-                //Scene scene = login.getScene();
-                rootPane2.getChildren().setAll(pane);
-                //this.loginMessage.setText("Logged in as makeupbrand");*/
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(this.getClass().getClassLoader().getResource("brandmain.fxml"));
                 Parent root1 = loader.load();
                 Scene scene1 = new Scene(root1);
                 BrandmainController control = loader.getController();
-                //MakeUpBrand br = new MakeUpBrand(us);
                 control.initData(us);
                 Stage stage1 = (Stage) login.getScene().getWindow();
                 stage1.setScene(scene1);

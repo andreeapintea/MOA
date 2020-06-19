@@ -100,7 +100,6 @@ public class ProductsController implements Initializable {
         Parent root1 = loader.load();
         Scene scene1 = new Scene(root1);
         BrandmainController control = loader.getController();
-        //MakeUpBrand br = new MakeUpBrand(us);
         control.initData(us);
         Stage stage1 = (Stage) backToMainButton.getScene().getWindow();
         stage1.setScene(scene1);
@@ -123,7 +122,6 @@ public class ProductsController implements Initializable {
     public void handleEditProductAction() throws Exception {
         User us=ProductsController.getBrand();
         Product p = ProductsController.getSelectedProd();
-        System.out.println(p);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getClassLoader().getResource("editproduct.fxml"));
         Parent root1 = loader.load();
@@ -143,7 +141,6 @@ public class ProductsController implements Initializable {
     public void handleDeleteProductAction() throws Exception {
         User us=ProductsController.getBrand();
         Product p = ProductsController.getSelectedProd();
-        System.out.println(p);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(this.getClass().getClassLoader().getResource("deleteProduct.fxml"));
         Parent root1 = loader.load();
@@ -171,7 +168,6 @@ public class ProductsController implements Initializable {
         }catch (IOException e){
             System.err.println(e.getMessage());
         }
-
-        //System.out.println(selectedProd);
+        
     }
 }

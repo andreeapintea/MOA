@@ -44,7 +44,6 @@ public class RegistrationController {
     public void initialize() {
         this.role.setValue("Client");
         this.role.setItems(roleList);
-      //  this.role.getItems().addAll(new Object[]{"Client", "Admin"});
     }
 
     @FXML
