@@ -97,4 +97,23 @@ public class ProductsService {
         
     }
 
+    public static void editProduct (Product pr, String name, String ImgURL, int quant, int nr, double price, String measure) {
+        for (Product p: products) {
+            if (p.equals(pr))
+            {
+
+                p.setProductName(name);
+                p.setImageUrl(ImgURL);
+
+                System.out.println(p.getImageUrl());
+                p.setQuantity(quant);
+                p.setNoOfItems(nr);
+                p.setPrice(price);
+                p.setMeasurement(measure);
+
+                ProductsService.persistProducts();
+            }
+        }
+    }
+
 }

@@ -1,5 +1,7 @@
 package org.example.model;
 
+import javafx.scene.image.Image;
+
 import java.util.Objects;
 
 public class Product {
@@ -29,6 +31,10 @@ public class Product {
 
     public int getNoOfItems() {
         return noOfItems;
+    }
+
+    public String getStringNoOfItems() {
+        return Integer.toString(noOfItems);
     }
 
     public void setNoOfItems(int noOfItems) {
@@ -63,6 +69,7 @@ public class Product {
         return imageUrl;
     }
 
+
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
@@ -70,13 +77,21 @@ public class Product {
     public int getQuantity() {
         return quantity;
     }
+    public String getStringQuantity() {
+        return Integer.toString(quantity);
+    }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
+
     public double getPrice() {
         return price;
+    }
+
+    public String getStringPrice() {
+        return Double.toString(price);
     }
 
     public String getMeasurement() {
