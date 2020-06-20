@@ -103,17 +103,7 @@ public class UserService {
     }
 
     public static User checkLogin(String username, String password) throws Exception {
-        /*UserService.loadUsersFromFile();
-        Iterator var1 = users.iterator();
 
-        User user;
-        do {
-            if (!var1.hasNext()) {
-                throw new UserDoesNotExist(username);
-            }
-
-            user = (User)var1.next();
-        } while(!Objects.equals(username, user.getUsername()));*/
         User u = UserService.getUser(username);
         if (Objects.equals(u.getPassword(), encodePassword(username, password))) {
             return u;
@@ -138,8 +128,7 @@ public class UserService {
                 Brands.add(us);
             }
         }
-       /* for(User us:Brands)
-            System.out.println(us);*/
+
         return Brands;
     }
 }

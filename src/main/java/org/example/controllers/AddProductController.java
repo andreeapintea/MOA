@@ -96,21 +96,15 @@ public class AddProductController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open Image");
 
-        //filter for .jpg
         FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.jpg");
         fileChooser.getExtensionFilters().add(imageFilter);
         File imageFile = fileChooser.showOpenDialog(stage);
         if (imageFile.isFile()){
-            //System.out.println(imageFile.getPath());
             setPath(imageFile.toURI().toString());
             productImage.setImage(new Image(imageFile.toURI().toString()));
         }
     }
 
-    public void copyImageFile(){
-
-
-    }
 
     public void handleAddAction(){
         if (fieldsReadyToSubmit()) {
@@ -141,7 +135,6 @@ public class AddProductController implements Initializable {
         Parent root1 = loader.load();
         Scene scene1 = new Scene(root1);
         ProductsController control = loader.getController();
-        //MakeUpBrand br = new MakeUpBrand(us);
         control.initData(us);
         Stage stage1 = (Stage) cancelButton.getScene().getWindow();
         stage1.setScene(scene1);

@@ -84,7 +84,6 @@ public class UpdatestatusController implements Initializable {
         Parent root1 = loader.load();
         Scene scene1 = new Scene(root1);
         OrdersBrandController control = loader.getController();
-        //MakeUpBrand br = new MakeUpBrand(us);
         control.initData(us);
         Stage stage1 = (Stage) backButton.getScene().getWindow();
         stage1.setScene(scene1);

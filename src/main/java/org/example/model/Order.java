@@ -20,9 +20,6 @@ public class Order {
         this.product = product;
         this.orderNo = orderNo;
         this.status = status;
-        //System.out.println(this.clientUsername);
-       // System.out.println(this.orderNo);
-        //System.out.println(this.product);
 
     }
 

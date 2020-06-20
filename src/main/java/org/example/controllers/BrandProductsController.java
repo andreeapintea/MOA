@@ -91,7 +91,6 @@ public class BrandProductsController {
     public void listViewSelectedProduct(){
         selectedProd = ProductsList.getSelectionModel().getSelectedItem();
         updateGUI();
-       // System.out.println(selectedProd);
     }
     private void updateGUI()
     {
