@@ -20,8 +20,8 @@ import java.util.Objects;
 
 public class ProductsService {
 
-    private static List<Product> products;
-    private static final Path PRODUCTS_PATH = FileSystemService.getPathToFile(new String[]{"config", "products.json"});
+    public static List<Product> products;
+    public static final Path PRODUCTS_PATH = FileSystemService.getPathToFile(new String[]{"config", "products.json"});
 
     public ProductsService() {
     }

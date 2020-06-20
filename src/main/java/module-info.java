@@ -11,4 +11,6 @@ module org.example {
     exports org.example.model;
     exports org.example.controllers;
     exports org.example.services;
+    exports org.example.exceptions;
+    //exports com.sun.javafx.application;
 }

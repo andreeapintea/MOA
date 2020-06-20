@@ -131,6 +131,10 @@ public class UserService {
 
         return Brands;
     }
+
+    public static List<User> getUsers() {
+        return users;
+    }
 }
 
 

@@ -23,19 +23,19 @@ public class RegistrationController {
 
     ObservableList<String> roleList = FXCollections.observableArrayList("Client", "MakeUpBrand");
     @FXML
-    private Text registrationMessage;
+    public Text registrationMessage;
     @FXML
-    private PasswordField passwordField;
+    public PasswordField passwordField;
     @FXML
-    private TextField usernameField;
+    public TextField usernameField;
     @FXML
-    private ChoiceBox role;
+    public ChoiceBox role;
     @FXML
-    private Button BacktoLoginButton;
+    public Button BacktoLoginButton;
     @FXML
-    private AnchorPane rootPane2;
+    public AnchorPane rootPane2;
     @FXML
-    private TextField nameField;
+    public TextField nameField;
 
     public RegistrationController() {
     }
