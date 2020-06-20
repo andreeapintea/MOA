@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class UserService {
-    private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile(new String[]{"config", "users.json"});
+    public static List<User> users;
+    public static final Path USERS_PATH = FileSystemService.getPathToFile(new String[]{"config", "users.json"});
 
     public UserService() {
     }
@@ -71,7 +71,7 @@ public class UserService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
         byte[] hashedPassword = md.digest(password.getBytes(StandardCharsets.UTF_8));

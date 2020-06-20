@@ -10,4 +10,5 @@ module org.example {
     exports org.example;
     exports org.example.model;
     exports org.example.controllers;
+    exports org.example.services;
 }
